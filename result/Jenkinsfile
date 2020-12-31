@@ -32,7 +32,7 @@ pipeline {
     }
     post {
         always {
-            echo "Build pipeline is completed for result"
+            echo "Build pipeline is completed for result app"
         }
 
     }
