@@ -9,9 +9,7 @@ pipeline {
               args '-v $HOME/.m2:/root/.m2'
            }
         }
-            when {
-              changeset "**/worker/**"
-                  }
+
             steps {
                 echo "Building worker app"
                    dir('worker')
@@ -27,9 +25,7 @@ pipeline {
               args '-v $HOME/.m2:/root/.m2'
            }
         }
-            when {
-                  changeset "**/worker/**"
-                  }
+
             steps {
               echo "Testing worker app"
               dir('worker'){
@@ -46,7 +42,6 @@ pipeline {
         }
             when {
               branch 'master'
-              changeset "**/worker/**"
             }
             steps {
                 echo "Packaging worker app"
@@ -62,7 +57,6 @@ pipeline {
             agent any
             when {
               branch 'master'
-              changeset "**/worker/**"
             }
             steps {
                 echo "Packaging worker app with docker"
